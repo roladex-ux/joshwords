@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="auth.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mailchimp Academy</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>👋</text></svg>">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Mobile hamburger -->
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="sidebar-overlay" id="overlay"></div>
+
+  <!-- ===== LIGHTBOX — no inline onclick handlers ===== -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightbox-close">&#215;</button>
+  <figure class="lightbox-figure">
+    <img id="lightbox-img" src="" alt="" />
+    <figcaption id="lightbox-caption"></figcaption>
+  </figure>
+</div>
+
+  <div class="site-wrapper">
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <h1>Josh Tobias</h1>
+        <p class="tagline">Strategy &amp; Design</p>
+      </div>
+
+      <nav class="sidebar-nav">
+
+        <!-- AIG -->
+        <div class="nav-category" id="cat-aig">
+          <button class="nav-category-toggle" onclick="toggleCat('cat-aig')">
+            <span class="chevron"></span> AIG
+          </button>
+          <div class="nav-sub-links">
+            <a href="aig-irm.html">IRM</a>
+          </div>
+        </div>
+
+        <!-- Instagram -->
+        <div class="nav-category" id="cat-instagram">
+          <button class="nav-category-toggle" onclick="toggleCat('cat-instagram')">
+            <span class="chevron"></span> Instagram
+          </button>
+          <div class="nav-sub-links">
+            <a href="ig-socialcontext.html">Social context</a>
+            <a href="ig-misc.html">Misc.</a>
+          </div>
+        </div>
+        
+        <!-- Google -->
+        <div class="nav-category" id="cat-google">
+          <button class="nav-category-toggle" onclick="toggleCat('cat-google')">
+            <span class="chevron"></span> Google
+          </button>
+          <div class="nav-sub-links">
+            <a href="google-guides.html">Guides</a>
+            <a href="google-retail.html">Retail training</a>
+          </div>
+        </div>
+
+        <!-- Mailchimp -->
+        <div class="nav-category" id="cat-mailchimp">
+          <button class="nav-category-toggle" onclick="toggleCat('cat-mailchimp')">
+            <span class="chevron"></span> Mailchimp
+          </button>
+          <div class="nav-sub-links">
+            <a href="mailchimp-academy.html">Mailchimp Academy</a>
+          </div>
+        </div>
+
+        <!-- Mentimeter -->
+        <div class="nav-category" id="cat-mentimeter">
+          <button class="nav-category-toggle" onclick="toggleCat('cat-mentimeter')">
+            <span class="chevron"></span> Mentimeter
+          </button>
+          <div class="nav-sub-links">
+            <a href="menti-ai.html">AI-powered insights</a>
+            <a href="menti-results.html">Data management</a>
+            <a href="menti-anonymous.html">Identified responses</a>
+          </div>
+        </div>
+
+        <!-- Twitter -->
+        <div class="nav-category" id="cat-twitter">
+          <button class="nav-category-toggle" onclick="toggleCat('cat-twitter')">
+            <span class="chevron"></span> Twitter
+          </button>
+          <div class="nav-sub-links">
+            <a href="twitter-misc.html">Misc.</a>
+          </div>
+        </div>
+
+        <!-- USA Today -->
+        <div class="nav-category" id="cat-usatoday">
+          <button class="nav-category-toggle" onclick="toggleCat('cat-usatoday')">
+            <span class="chevron"></span> USA Today
+          </button>
+          <div class="nav-sub-links">
+            <a href="usa-reviewed.html">Reviewed.com</a>
+          </div>
+        </div>
+
+        <div class="nav-divider"></div>
+        <a href="index.html#about" class="nav-about">About</a>
+      </nav>
+    </aside>
+
+
+    <!-- ===== MAIN ===== -->
+    <main class="main-content page-fade-in">
+
+      <!-- HEADER -->
+      <header class="case-study-header">
+        <h1>Mailchimp Academy</h1>
+      </header>
+
+      <!-- BACKGROUND -->
+      <section class="cs-section">
+        <h2>Background</h2>
+ 	<p>
+Among the many products and services Mailchimp offers, they also provide customers with the opportunity to join the Mailchimp partner program. Becoming a Mailchimp partner gives customers access to many exclusive benefits, such as the opportunity to appear in Mailchimp’s marketing materials, and the ability to offer their services in Mailchimp’s experts directory or integrations directory. With the latter, partners are able to acquire new customers directly from Mailchimp. 
+	</p>
+	<p>
+Within the partner program, product education is consistently one of the top content requests. If partners were better educated on specific products and marketing skills, they could offer more services to their clients. However, Mailchimp needed an interactive and scalable way to validate this newly gained expertise, as partners would still be sourcing their clients directly within Mailchimp (in essence, as representatives of the brand). With all this in mind, Mailchimp elected to create Mailchimp Academy. 
+	</p>
+
+	<div class="cs-image" onclick="openLightbox(this)">
+	  <img src="https://www.nylabone.com/-/media/project/oneweb/nylabone/images/dog101/9-fluffy-dog-breeds/bichon-frise-outside.jpg" alt="Description" />
+	  <div class="caption right">Training materials laid out on the table.</div>
+        </div>
+
+      </section>
+
+      <!--
+        HOW TO USE THE IMAGE COMPONENT
+        ================================
+        • Replace src="your-image.jpg" with your actual file path
+        • Change "left" to "right" on the caption div to flip its position
+        • To have no caption at all, delete the <div class="caption"> entirely
+        • Click any image to expand it fullscreen in the lightbox
+      -->
+
+      <!-- CHALLENGE -->
+      <section class="cs-section">
+        <h2>Challenge</h2>
+        <p>
+For Mailchimp Academy to be a success, Mailchimp needed to find an interactive way to teach users product information and core marketing concepts. Additionally, they needed to create a rigorous testing and certification program, so they could better validate the knowledge of their partners. 
+	</p>
+      </section>
+
+	<div class="cs-image" onclick="openLightbox(this)">
+	  <img src="https://www.nylabone.com/-/media/project/oneweb/nylabone/images/dog101/9-fluffy-dog-breeds/bichon-frise-outside.jpg" alt="Description" />
+	  <div class="caption right">Training materials laid out on the table.</div>
+        </div>
+
+      <!-- OUR APPROACH -->
+      <section class="cs-section">
+        <h2>Our approach</h2>
+        <p>
+To help Mailchimp develop an interactive learning platform fit to their users’ needs, our team completed the following activities:
+	</p>
+	<ul>
+	<li>Utilized first and third party research to identify the goals and challenges of the standard Mailchimp partner</li>
+	<li>Conducted an audit of existing Mailchimp products and services to structure the curriculum for Mailchimp Academy’s bedrock certification, “Mailchimp Foundations”</li>
+	<li>Planned and executed an editorial program to produce content on a rolling basis using agile methodologies</li>
+	<li>Developed and edited content for over 14 hours of certification coursework (49 original courses and 13 assessments)</li> 
+	<li>Utilized abstract patterns and illustrations to give the Mailchimp Academy experience a celebratory flair that still fit under the unique umbrella of Mailchimp’s main brand</li>
+	<li>Created an original style guide highlighting how the standard voice and tone of Mailchimp must adjust for Mailchimp Academy</li>
+	<li>Packaged all original processes into a comprehensive playbook that documented the content creation process from a strategy, editorial, and project management perspective to support future content partners</li>
+	</ul>
+	</section>
+
+	<div class="cs-image" onclick="openLightbox(this)">
+	  <img src="https://www.nylabone.com/-/media/project/oneweb/nylabone/images/dog101/9-fluffy-dog-breeds/bichon-frise-outside.jpg" alt="Description" />
+	  <div class="caption right">Training materials laid out on the table.</div>
+        </div>
+
+      <!-- OUTCOMES -->
+      <section class="cs-section">
+        <h2>Outcomes</h2>
+        <p>
+After developing a content strategy for each curriculum, we teamed up with Mailchimp’s partner, design and marketing teams to begin producing content on a rolling basis. 
+	</p>
+	<p>
+Our initial scope of work yielded over five hours’ worth of material — everything from micro-modules to hands-on learning activities that mirror the Mailchimp app. We also brought the Mailchimp Academy brand to life through design. From wireframes to animated GIFs, we mapped out not just the content but how learners would interact with it.
+	</p>
+	<p>
+While our initial focus was on creating content, we still viewed Mailchimp Academy as a standalone product and applied development principles that would set the program up for scalable success. This included putting our work in front of real-world learners at points along the way to solicit feedback and respond rapidly in an effort to best meet their needs.
+	</p>
+	<p>
+Since Mailchimp Academy’s initial launch, we’ve had the opportunity to continue to partner with Mailchimp to make the experience even more helpful and interactive. Additionally, our work on Mailchimp Academy won Platinum in the ‘E-Learning Platform’ category of the 2020 Hermes Creative Awards and an honorable mention in the ‘Learning’ category of Fast Company’s 2020 Innovation by Design Awards.
+	</p>
+      </section>
+
+	<div class="cs-image" onclick="openLightbox(this)">
+	  <img src="https://www.nylabone.com/-/media/project/oneweb/nylabone/images/dog101/9-fluffy-dog-breeds/bichon-frise-outside.jpg" alt="Description" />
+	  <div class="caption right">Training materials laid out on the table.</div>
+        </div>
+
+      <!-- ─── SECTION: Project samples & additional details ─── -->
+      <section class="cs-section">
+        <h2>Project samples &amp; additional details</h2>
+
+	<div class="cs-image" onclick="openLightbox(this)">
+	  <img src="https://www.nylabone.com/-/media/project/oneweb/nylabone/images/dog101/9-fluffy-dog-breeds/bichon-frise-outside.jpg" alt="Description" />
+	  <div class="caption right">Training materials laid out on the table.</div>
+        </div>
+
+	<div class="cs-image" onclick="openLightbox(this)">
+	  <img src="https://www.nylabone.com/-/media/project/oneweb/nylabone/images/dog101/9-fluffy-dog-breeds/bichon-frise-outside.jpg" alt="Description" />
+	  <div class="caption left">Training materials laid out on the table.</div>
+        </div>
+
+	<div class="cs-image" onclick="openLightbox(this)">
+	  <img src="https://www.nylabone.com/-/media/project/oneweb/nylabone/images/dog101/9-fluffy-dog-breeds/bichon-frise-outside.jpg" alt="Description" />
+	  <div class="caption right">Training materials laid out on the table.</div>
+        </div>
+
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+/* ---- Category accordion ---- */
+function toggleCat(id) {
+  const el = document.getElementById(id);
+  el.classList.toggle('open');
+}
+
+/* Highlight active link and open its parent category */
+document.querySelectorAll('.nav-sub-links a').forEach(function(link) {
+  if (link.href === window.location.href) {
+    link.classList.add('active');
+    const cat = link.closest('.nav-category');
+    if (cat) cat.classList.add('open');
+  }
+
+  /* Save category only when the user actually clicks a link */
+  link.addEventListener('click', function() {
+    const cat = link.closest('.nav-category');
+    if (cat) sessionStorage.setItem('openCat', cat.id);
+  });
+});
+
+/* Restore saved category */
+const openCat = sessionStorage.getItem('openCat');
+if (openCat && document.getElementById(openCat)) {
+  document.getElementById(openCat).classList.add('open');
+}
+    /* ---- Mobile sidebar ---- */
+    document.getElementById('hamburger').addEventListener('click', function() {
+      document.getElementById('sidebar').classList.add('open');
+      document.getElementById('overlay').classList.add('visible');
+    });
+    document.getElementById('overlay').addEventListener('click', function() {
+      document.getElementById('sidebar').classList.remove('open');
+      document.getElementById('overlay').classList.remove('visible');
+    });
+
+    /* ---- Lightbox ---- */
+    var lb    = document.getElementById('lightbox');
+    var lbImg = document.getElementById('lightbox-img');
+
+function openLightbox(src, alt, caption) {
+  lbImg.src = src;
+  lbImg.alt = alt || '';
+  document.getElementById('lightbox-caption').textContent = caption || '';
+  lb.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+    function closeLightbox() {
+      lb.classList.remove('active');
+      document.body.style.overflow = '';
+      /* Clear src after transition so old image doesn't flash */
+      setTimeout(function() { lbImg.src = ''; }, 300);
+    }
+
+/* Single delegated listener — works for ALL .cs-image blocks, including new ones */
+document.addEventListener('click', function(e) {
+  var wrapper = e.target.closest('.cs-image');
+  if (wrapper) {
+    var img = wrapper.querySelector('img');
+    var caption = wrapper.querySelector('.caption');
+    openLightbox(img.src, img.alt, caption ? caption.textContent.trim() : '');
+  }
+});
+
+    /* Close when clicking the dark backdrop (but NOT the image) */
+    lb.addEventListener('click', function(e) {
+      if (e.target !== lbImg) closeLightbox();
+    });
+
+    /* Close button */
+    document.getElementById('lightbox-close').addEventListener('click', function(e) {
+      e.stopPropagation();
+      closeLightbox();
+    });
+
+    /* Escape key */
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+
+</body>
+</html>

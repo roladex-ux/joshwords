@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<script src="auth.js"></script>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Josh's portfolio</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>👋</text></svg>">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Mobile hamburger -->
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="sidebar-overlay" id="overlay"></div>
+
+  <div class="site-wrapper">
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <h1>Josh Tobias</h1>
+        <p class="tagline">Strategy &amp; Design</p>
+      </div>
+
+      <nav class="sidebar-nav">
+
+        <!-- AIG -->
+        <div class="nav-category" id="cat-aig">
+          <button class="nav-category-toggle" onclick="toggleCat('cat-aig')">
+            <span class="chevron"></span> AIG
+          </button>
+          <div class="nav-sub-links">
+            <a href="aig-irm.html">IRM</a>
+          </div>
+        </div>
+
+        <!-- Instagram -->
+        <div class="nav-category" id="cat-instagram">
+          <button class="nav-category-toggle" onclick="toggleCat('cat-instagram')">
+            <span class="chevron"></span> Instagram
+          </button>
+          <div class="nav-sub-links">
+            <a href="ig-socialcontext.html">Social context</a>
+            <a href="ig-misc.html">Misc.</a>
+          </div>
+        </div>
+        
+        <!-- Google -->
+        <div class="nav-category" id="cat-google">
+          <button class="nav-category-toggle" onclick="toggleCat('cat-google')">
+            <span class="chevron"></span> Google
+          </button>
+          <div class="nav-sub-links">
+            <a href="google-guides.html">Guides</a>
+            <a href="google-retail.html">Retail training</a>
+          </div>
+        </div>
+
+        <!-- Mailchimp -->
+        <div class="nav-category" id="cat-mailchimp">
+          <button class="nav-category-toggle" onclick="toggleCat('cat-mailchimp')">
+            <span class="chevron"></span> Mailchimp
+          </button>
+          <div class="nav-sub-links">
+            <a href="mailchimp-academy.html">Mailchimp Academy</a>
+          </div>
+        </div>
+
+        <!-- Mentimeter -->
+        <div class="nav-category" id="cat-mentimeter">
+          <button class="nav-category-toggle" onclick="toggleCat('cat-mentimeter')">
+            <span class="chevron"></span> Mentimeter
+          </button>
+          <div class="nav-sub-links">
+            <a href="menti-ai.html">AI-powered insights</a>
+            <a href="menti-results.html">Data management</a>
+            <a href="menti-anonymous.html">Identified responses</a>
+          </div>
+        </div>
+
+        <!-- Twitter -->
+        <div class="nav-category" id="cat-twitter">
+          <button class="nav-category-toggle" onclick="toggleCat('cat-twitter')">
+            <span class="chevron"></span> Twitter
+          </button>
+          <div class="nav-sub-links">
+            <a href="twitter-misc.html">Misc.</a>
+          </div>
+        </div>
+
+        <!-- USA Today -->
+        <div class="nav-category" id="cat-usatoday">
+          <button class="nav-category-toggle" onclick="toggleCat('cat-usatoday')">
+            <span class="chevron"></span> USA Today
+          </button>
+          <div class="nav-sub-links">
+            <a href="usa-reviewed.html">Reviewed.com</a>
+          </div>
+        </div>
+
+        <div class="nav-divider"></div>
+        <a href="#about" class="nav-about">About</a>
+      </nav>
+    </aside>
+
+    <!-- ===== MAIN ===== -->
+    <main class="main-content page-fade-in">
+      <section class="home-hero">
+
+        <!-- Photo -->
+        <div class="home-photo-col">
+          <!--
+            Replace the src below with your own photo.
+            Suggested: a portrait at least 800px wide.
+          -->
+          <img
+            class="home-photo"
+            src="your-photo.jpg"
+            alt="Photo of me and Gooby"
+            onerror="this.style.background='#e8e5e0';this.style.minHeight='420px';this.removeAttribute('onerror')"
+          />
+          <p class="home-photo-caption">(That's my old dog, Gooby.)</p>
+        </div>
+
+        <!-- Bio -->
+        <div class="home-bio-col" id="about">
+          <h2>Hi, I'm Josh</h2>
+          <p>
+            I'm an accomplished creator with over 15 years of experience in content and design.
+          </p>
+          <p>
+            All you really need to know about me, though, is that I unironically like birthdays, Carly Rae Jepsen, and selfies.
+          </p>
+        </div>
+
+      </section>
+    </main>
+  </div>
+
+  <script>
+
+/* Clear saved category when returning to homepage */
+sessionStorage.removeItem('openCat');
+/* ---- Category accordion ---- */
+function toggleCat(id) {
+  const el = document.getElementById(id);
+  el.classList.toggle('open');
+}
+
+/* Clear saved category when returning to homepage */
+sessionStorage.removeItem('openCat');
+
+/* Highlight active link and open its parent category */
+document.querySelectorAll('.nav-sub-links a').forEach(function(link) {
+  if (link.href === window.location.href) {
+    link.classList.add('active');
+    const cat = link.closest('.nav-category');
+    if (cat) cat.classList.add('open');
+  }
+
+  /* Save category only when the user actually clicks a link */
+  link.addEventListener('click', function() {
+    const cat = link.closest('.nav-category');
+    if (cat) sessionStorage.setItem('openCat', cat.id);
+  });
+});
+
+/* Restore saved category */
+const openCat = sessionStorage.getItem('openCat');
+if (openCat && document.getElementById(openCat)) {
+  document.getElementById(openCat).classList.add('open');
+}
+    /* ---- Mobile sidebar ---- */
+    const hamburger = document.getElementById('hamburger');
+    const sidebar   = document.getElementById('sidebar');
+    const overlay   = document.getElementById('overlay');
+
+    function openSidebar()  { sidebar.classList.add('open'); overlay.classList.add('visible'); }
+    function closeSidebar() { sidebar.classList.remove('open'); overlay.classList.remove('visible'); }
+
+    hamburger.addEventListener('click', openSidebar);
+    overlay.addEventListener('click', closeSidebar);
+
+    /* ---- Mark active link ---- */
+    const links = document.querySelectorAll('.nav-sub-links a');
+    links.forEach(link => {
+      if (link.href === window.location.href) {
+        link.classList.add('active');
+        // Open parent accordion
+        link.closest('.nav-category').classList.add('open');
+      }
+    });
+  </script>
+</body>
+</html>

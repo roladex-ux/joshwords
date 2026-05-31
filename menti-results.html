@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="auth.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data management</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>👋</text></svg>">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Mobile hamburger -->
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="sidebar-overlay" id="overlay"></div>
+
+  <!-- ===== LIGHTBOX — no inline onclick handlers ===== -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightbox-close">&#215;</button>
+  <figure class="lightbox-figure">
+    <img id="lightbox-img" src="" alt="" />
+    <figcaption id="lightbox-caption"></figcaption>
+  </figure>
+</div>
+
+  <div class="site-wrapper">
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <h1>Josh Tobias</h1>
+        <p class="tagline">Strategy &amp; Design</p>
+      </div>
+
+      <nav class="sidebar-nav">
+
+        <!-- AIG -->
+        <div class="nav-category" id="cat-aig">
+          <button class="nav-category-toggle" onclick="toggleCat('cat-aig')">
+            <span class="chevron"></span> AIG
+          </button>
+          <div class="nav-sub-links">
+            <a href="aig-irm.html">IRM</a>
+          </div>
+        </div>
+
+        <!-- Instagram -->
+        <div class="nav-category" id="cat-instagram">
+          <button class="nav-category-toggle" onclick="toggleCat('cat-instagram')">
+            <span class="chevron"></span> Instagram
+          </button>
+          <div class="nav-sub-links">
+            <a href="ig-socialcontext.html">Social context</a>
+            <a href="ig-misc.html">Misc.</a>
+          </div>
+        </div>
+        
+        <!-- Google -->
+        <div class="nav-category" id="cat-google">
+          <button class="nav-category-toggle" onclick="toggleCat('cat-google')">
+            <span class="chevron"></span> Google
+          </button>
+          <div class="nav-sub-links">
+            <a href="google-guides.html">Guides</a>
+            <a href="google-retail.html">Retail training</a>
+          </div>
+        </div>
+
+        <!-- Mailchimp -->
+        <div class="nav-category" id="cat-mailchimp">
+          <button class="nav-category-toggle" onclick="toggleCat('cat-mailchimp')">
+            <span class="chevron"></span> Mailchimp
+          </button>
+          <div class="nav-sub-links">
+            <a href="mailchimp-academy.html">Mailchimp Academy</a>
+          </div>
+        </div>
+
+        <!-- Mentimeter -->
+        <div class="nav-category" id="cat-mentimeter">
+          <button class="nav-category-toggle" onclick="toggleCat('cat-mentimeter')">
+            <span class="chevron"></span> Mentimeter
+          </button>
+          <div class="nav-sub-links">
+            <a href="menti-ai.html">AI-powered insights</a>
+            <a href="menti-results.html">Data management</a>
+            <a href="menti-anonymous.html">Identified responses</a>
+          </div>
+        </div>
+
+        <!-- Twitter -->
+        <div class="nav-category" id="cat-twitter">
+          <button class="nav-category-toggle" onclick="toggleCat('cat-twitter')">
+            <span class="chevron"></span> Twitter
+          </button>
+          <div class="nav-sub-links">
+            <a href="twitter-misc.html">Misc.</a>
+          </div>
+        </div>
+
+        <!-- USA Today -->
+        <div class="nav-category" id="cat-usatoday">
+          <button class="nav-category-toggle" onclick="toggleCat('cat-usatoday')">
+            <span class="chevron"></span> USA Today
+          </button>
+          <div class="nav-sub-links">
+            <a href="usa-reviewed.html">Reviewed.com</a>
+          </div>
+        </div>
+
+        <div class="nav-divider"></div>
+        <a href="index.html#about" class="nav-about">About</a>
+      </nav>
+    </aside>
+
+
+    <!-- ===== MAIN ===== -->
+    <main class="main-content page-fade-in">
+
+      <!-- HEADER -->
+      <header class="case-study-header">
+        <h1>Data management</h1>
+      </header>
+
+      <!-- BACKGROUND -->
+      <section class="cs-section">
+        <h2>Background</h2>
+ 	<p>
+Mentimeter is primarily used to create engaging presentations and surveys. Essentially, we help people ask questions, create conversations, and get answers. And, after users share a presentation or survey, we offer several ways for them to dig into their data and build upon their insights.
+	</p>
+
+	<div class="cs-image" onclick="openLightbox(this)">
+	  <img src="https://www.nylabone.com/-/media/project/oneweb/nylabone/images/dog101/9-fluffy-dog-breeds/bichon-frise-outside.jpg" alt="Description" />
+	  <div class="caption right">Training materials laid out on the table.</div>
+        </div>
+
+      </section>
+
+      <!--
+        HOW TO USE THE IMAGE COMPONENT
+        ================================
+        • Replace src="your-image.jpg" with your actual file path
+        • Change "left" to "right" on the caption div to flip its position
+        • To have no caption at all, delete the <div class="caption"> entirely
+        • Click any image to expand it fullscreen in the lightbox
+      -->
+
+      <!-- CHALLENGE -->
+      <section class="cs-section">
+        <h2>Challenge</h2>
+        <p>
+When I first joined Mentimeter, we’d automatically add a banner to the top of the page whenever a user viewed a file with result data. This banner simply suggested that users should “Manage their results”. However, if a user engaged with this flow, they’d mistakenly be encouraged to permanently delete data in their account without proper warning.
+	</p>
+	<p>
+This was a pretty scary and negative experience for our users. To make matters worse, we didn’t have a good system in place to recover any data lost via this method, which led to countless pain for our Support team. We also felt that such a permanent message (“You have results”) wasn’t worth the real estate of a permanent banner, and we wanted to explore ways to contextually deliver the right message at the right time. 
+	</p>
+      </section>
+
+	<div class="cs-image" onclick="openLightbox(this)">
+	  <img src="https://www.nylabone.com/-/media/project/oneweb/nylabone/images/dog101/9-fluffy-dog-breeds/bichon-frise-outside.jpg" alt="Description" />
+	  <div class="caption right">Training materials laid out on the table.</div>
+        </div>
+
+      <!-- OUR APPROACH -->
+      <section class="cs-section">
+        <h2>Our approach</h2>
+        <p>
+To ensure we were building something that benefitted both our users and our internal teams, our team did the following:
+	</p>
+	<ul>
+	<li>Completed an audit of the existing flow against heuristic design principles</li>
+	<li>Met with Support to learn more about the types of issues users were experience with this flow</li>
+	<li>Built an automated survey in platform to quickly learn why people used this feature immediately after selecting it</li>
+	<li>Mapped out user flows based on both expected behaviors and jobs to be done assessed in qualitative research</li>
+	<li>Ideated on unique ways to surface result management opportunities in more contextual ways</li>
+	<li>Ran A/B tests with clickable prototypes to validate designs for each of our previously identified user flows</li>
+	<li>Collaborated with Support and other impacted teams as key stakeholders throughout the process</li>
+	</ul>
+	</section>
+
+	<div class="cs-image" onclick="openLightbox(this)">
+	  <img src="https://www.nylabone.com/-/media/project/oneweb/nylabone/images/dog101/9-fluffy-dog-breeds/bichon-frise-outside.jpg" alt="Description" />
+	  <div class="caption right">Training materials laid out on the table.</div>
+        </div>
+
+      <!-- OUTCOMES -->
+      <section class="cs-section">
+        <h2>Outcomes</h2>
+        <p>
+Tickets related to lost data within the platform have decreased dramatically, and users have still been able to engage with our contextual messages without any additional friction. We’re still tracking overall success metrics for these changes, but as of now our Support and Product teams are quite excited about the outcomes. 
+	</p>
+      </section>
+
+	<div class="cs-image" onclick="openLightbox(this)">
+	  <img src="https://www.nylabone.com/-/media/project/oneweb/nylabone/images/dog101/9-fluffy-dog-breeds/bichon-frise-outside.jpg" alt="Description" />
+	  <div class="caption right">Training materials laid out on the table.</div>
+        </div>
+
+      <!-- ─── SECTION: Project samples & additional details ─── -->
+      <section class="cs-section">
+        <h2>Project samples &amp; additional details</h2>
+
+	<div class="cs-image" onclick="openLightbox(this)">
+	  <img src="https://www.nylabone.com/-/media/project/oneweb/nylabone/images/dog101/9-fluffy-dog-breeds/bichon-frise-outside.jpg" alt="Description" />
+	  <div class="caption right">Training materials laid out on the table.</div>
+        </div>
+
+	<div class="cs-image" onclick="openLightbox(this)">
+	  <img src="https://www.nylabone.com/-/media/project/oneweb/nylabone/images/dog101/9-fluffy-dog-breeds/bichon-frise-outside.jpg" alt="Description" />
+	  <div class="caption left">Training materials laid out on the table.</div>
+        </div>
+
+	<div class="cs-image" onclick="openLightbox(this)">
+	  <img src="https://www.nylabone.com/-/media/project/oneweb/nylabone/images/dog101/9-fluffy-dog-breeds/bichon-frise-outside.jpg" alt="Description" />
+	  <div class="caption right">Training materials laid out on the table.</div>
+        </div>
+
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+/* ---- Category accordion ---- */
+function toggleCat(id) {
+  const el = document.getElementById(id);
+  el.classList.toggle('open');
+}
+
+/* Highlight active link and open its parent category */
+document.querySelectorAll('.nav-sub-links a').forEach(function(link) {
+  if (link.href === window.location.href) {
+    link.classList.add('active');
+    const cat = link.closest('.nav-category');
+    if (cat) cat.classList.add('open');
+  }
+
+  /* Save category only when the user actually clicks a link */
+  link.addEventListener('click', function() {
+    const cat = link.closest('.nav-category');
+    if (cat) sessionStorage.setItem('openCat', cat.id);
+  });
+});
+
+/* Restore saved category */
+const openCat = sessionStorage.getItem('openCat');
+if (openCat && document.getElementById(openCat)) {
+  document.getElementById(openCat).classList.add('open');
+}
+    /* ---- Mobile sidebar ---- */
+    document.getElementById('hamburger').addEventListener('click', function() {
+      document.getElementById('sidebar').classList.add('open');
+      document.getElementById('overlay').classList.add('visible');
+    });
+    document.getElementById('overlay').addEventListener('click', function() {
+      document.getElementById('sidebar').classList.remove('open');
+      document.getElementById('overlay').classList.remove('visible');
+    });
+
+    /* ---- Lightbox ---- */
+    var lb    = document.getElementById('lightbox');
+    var lbImg = document.getElementById('lightbox-img');
+
+function openLightbox(src, alt, caption) {
+  lbImg.src = src;
+  lbImg.alt = alt || '';
+  document.getElementById('lightbox-caption').textContent = caption || '';
+  lb.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+    function closeLightbox() {
+      lb.classList.remove('active');
+      document.body.style.overflow = '';
+      /* Clear src after transition so old image doesn't flash */
+      setTimeout(function() { lbImg.src = ''; }, 300);
+    }
+
+/* Single delegated listener — works for ALL .cs-image blocks, including new ones */
+document.addEventListener('click', function(e) {
+  var wrapper = e.target.closest('.cs-image');
+  if (wrapper) {
+    var img = wrapper.querySelector('img');
+    var caption = wrapper.querySelector('.caption');
+    openLightbox(img.src, img.alt, caption ? caption.textContent.trim() : '');
+  }
+});
+
+    /* Close when clicking the dark backdrop (but NOT the image) */
+    lb.addEventListener('click', function(e) {
+      if (e.target !== lbImg) closeLightbox();
+    });
+
+    /* Close button */
+    document.getElementById('lightbox-close').addEventListener('click', function(e) {
+      e.stopPropagation();
+      closeLightbox();
+    });
+
+    /* Escape key */
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+
+</body>
+</html>

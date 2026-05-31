@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Josh Tobias — Enter</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .login-box {
+      width: 100%;
+      max-width: 380px;
+      padding: 0 24px;
+      text-align: center;
+    }
+    .login-box h1 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 400;
+      margin-bottom: 6px;
+    }
+    .login-box .tagline {
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gray-dark);
+      margin-bottom: 40px;
+    }
+    .login-box input[type="password"] {
+      width: 100%;
+      background: none;
+      border: none;
+      border-bottom: 1.5px solid var(--gray-light);
+      padding: 10px 0;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--black);
+      text-align: center;
+      letter-spacing: 0.15em;
+      outline: none;
+      transition: border-color 0.2s;
+      margin-bottom: 28px;
+    }
+    .login-box input[type="password"]:focus {
+      border-bottom-color: var(--accent);
+    }
+    .login-box input::placeholder {
+      letter-spacing: 0.05em;
+      color: var(--gray-mid);
+    }
+    .login-box button {
+      background: var(--black);
+      color: var(--white);
+      border: none;
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 13px 36px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .login-box button:hover {
+      background: var(--accent);
+      color: var(--black);
+    }
+    .login-error {
+      margin-top: 20px;
+      font-size: 0.75rem;
+      color: #b04040;
+      min-height: 1em;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .login-error.visible { opacity: 1; }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h1>Hi there</h1>
+    <p class="tagline">(The password's on my resume)</p>
+    <input type="password" id="pwd" placeholder="Password" autofocus />
+    <br />
+    <button id="enter-btn">Enter</button>
+    <p class="login-error" id="err">Incorrect password. Try again.</p>
+  </div>
+
+  <script>
+    var PASSWORD = "ilovemydog"; // ← must match auth.js
+    var KEY = "portfolio_auth";
+
+    function attempt() {
+      var input = document.getElementById("pwd").value;
+      if (input === PASSWORD) {
+        sessionStorage.setItem(KEY, PASSWORD);
+        var params = new URLSearchParams(window.location.search);
+        var next = params.get("next");
+        window.location.replace(
+          next && next.startsWith(window.location.origin)
+            ? next
+            : "index.html"
+        );
+      } else {
+        document.getElementById("err").classList.add("visible");
+        document.getElementById("pwd").value = "";
+        document.getElementById("pwd").focus();
+      }
+    }
+
+    document.getElementById("enter-btn").addEventListener("click", attempt);
+    document.getElementById("pwd").addEventListener("keydown", function(e) {
+      if (e.key === "Enter") attempt();
+    });
+  </script>
+</body>
+</html>
