@@ -345,10 +345,10 @@ img { display: block; max-width: 100%; }
 
 .cs-image img {
   display: block;
-  width: auto;
-  height: auto;
+  width: 100%;
   max-width: 1024px;
   max-height: 1024px;
+  object-fit: contain;
   transition: transform 0.5s ease;
 }
 
