@@ -359,25 +359,26 @@ img { display: block; max-width: 100%; }
    dark charcoal, flush to the bottom edge,
    switchable left/right via class */
 .cs-image .caption {
-  position: absolute;
-  bottom: 0;
-  background: #2e2c2b;   /* charcoal matching reference */
-  color: #f9f7f4;
+  position: relative;
+  background: none;
+  color: var(--gray-dark);
   font-family: var(--font-body);
   font-size: 0.8rem;
   font-weight: 300;
+  font-style: italic;
   line-height: 1.55;
-  padding: 14px 18px;
-  max-width: 260px;
+  padding: 8px 0;
+  max-width: 100%;
+  display: block;
+  cursor: default;
   pointer-events: none;
-  /* No border-radius — square corners like the reference */
 }
 
 /* Position: left (default) */
-.cs-image .caption.left  { left: 0; }
+.cs-image .caption.left  { text-align: left; }
 
 /* Position: right */
-.cs-image .caption.right { right: 0; }
+.cs-image .caption.right { text-align: right; }
 
 /* =========================================
    LIGHTBOX
