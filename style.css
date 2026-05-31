@@ -335,11 +335,9 @@ img { display: block; max-width: 100%; }
 
 .cs-image {
   position: relative;
-  display: block;
+  display: table;
   margin: 40px auto;
-  overflow: hidden;
   cursor: zoom-in;
-  width: fit-content;
   max-width: 1280px;
 }
 
