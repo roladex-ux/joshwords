@@ -321,19 +321,6 @@ document.addEventListener('click', function(e) {
       if (e.key === 'Escape') closeLightbox();
     });
 
-  /* Cap images at 70% of their natural size only if they exceed 1280px */
-document.querySelectorAll('.cs-image img').forEach(function(img) {
-  function applySize() {
-    if (img.naturalWidth > 1280) {
-      img.style.maxWidth = (img.naturalWidth * 0.7) + 'px';
-    }
-  }
-  if (img.complete) {
-    applySize();
-  } else {
-    img.addEventListener('load', applySize);
-  }
-});
   </script>
 
 </body>
