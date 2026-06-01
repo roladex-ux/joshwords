@@ -332,9 +332,6 @@ img { display: block; max-width: 100%; }
 
 /* =========================================
    IMAGE COMPONENT
-   Single type: full-width, clickable,
-   with a pinned charcoal annotation box
-   positioned left or right.
    ========================================= */
 
 .cs-image {
@@ -357,17 +354,10 @@ img { display: block; max-width: 100%; }
   transition: transform 0.5s ease;
 }
 
-.cs-image img {
-  cursor: zoom-in;
-}
-
 .cs-image:hover img {
   transform: scale(1.015);
 }
 
-/* Annotation box — mimics your reference exactly:
-   dark charcoal, flush to the bottom edge,
-   switchable left/right via class */
 .cs-image .caption {
   position: absolute;
   bottom: 0;
