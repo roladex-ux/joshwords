@@ -341,7 +341,8 @@ img { display: block; max-width: 100%; }
   align-items: center;
   margin: 40px auto;
   cursor: default;
-  max-width: 1280px;
+  max-width: 600px;
+  width: fit-content;
 }
 
 .cs-image img {
