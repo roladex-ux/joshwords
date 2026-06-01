@@ -334,14 +334,14 @@ img { display: block; max-width: 100%; }
   position: relative;
   display: block;
   margin: 40px auto;
-  max-width: 800px;
+  max-width: 650px;
   width: fit-content;
 }
 
 .cs-image img {
   display: block;
   width: 100%;
-  max-height: 800px;
+  max-height: 650px;
   object-fit: contain;
   cursor: zoom-in;
   transition: transform 0.5s ease;
