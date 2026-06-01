@@ -533,5 +533,20 @@ img { display: block; max-width: 100%; }
   .home-bio-col h2 { font-size: 2rem; }
 
   .case-study-header h1 { font-size: 2rem; }
-   
+
+  .cs-image {
+    width: 100%;
+    max-width: 100%;
+    margin: 24px 0;
+  }
+
+  .cs-image img {
+    width: 100%;
+    max-width: 100%;
+    max-height: none;
+  }
+
+  .cs-image .caption {
+    display: none;
+  }
 }
