@@ -40,6 +40,10 @@ body {
 
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
+.cs-image img {
+  max-width: 600px !important;
+  max-height: 600px !important;
+}
 
 /* =========================================
    LAYOUT
