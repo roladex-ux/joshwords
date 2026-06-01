@@ -528,8 +528,17 @@ img { display: block; max-width: 100%; }
     gap: 36px;
   }
 
-  .home-photo { aspect-ratio: 3/2; }
+.home-photo-col {
+    width: 100%;
+  }
 
+  .home-photo {
+    width: 100%;
+    aspect-ratio: 3/2;
+    object-fit: cover;
+    object-position: center top;
+  }
+   
   .home-bio-col h2 { font-size: 2rem; }
 
   .case-study-header h1 { font-size: 2rem; }
