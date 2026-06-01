@@ -332,13 +332,9 @@ img { display: block; max-width: 100%; }
 
 .cs-image {
   position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: center;
+  display: block;
   margin: 40px auto;
   width: fit-content;
-  max-width: 900px;
 }
 
 .cs-image img {
@@ -349,9 +345,6 @@ img { display: block; max-width: 100%; }
   object-fit: contain;
   cursor: zoom-in;
   transition: transform 0.5s ease;
-  order: 2;
-  position: relative;
-  z-index: 0;
 }
 
 .cs-image:hover img {
@@ -359,6 +352,8 @@ img { display: block; max-width: 100%; }
 }
 
 .cs-image .caption {
+  position: absolute;
+  bottom: 20%;
   background: #2e2c2b;
   color: #f9f7f4;
   font-family: var(--font-body);
@@ -369,13 +364,11 @@ img { display: block; max-width: 100%; }
   width: 160px;
   pointer-events: none;
   cursor: default;
-  align-self: flex-end;
-  position: relative;
   z-index: 1;
 }
 
-.cs-image .caption.left  { order: 1; margin-right: -48px; }
-.cs-image .caption.right { order: 3; margin-left: -48px; }
+.cs-image .caption.left  { left: -48px; }
+.cs-image .caption.right { right: -48px; }
 
 /* Position: left (default) */
 /* .cs-image .caption.left  { text-align: left; } */
