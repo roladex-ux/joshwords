@@ -1,5 +1,5 @@
 (function () {
-  var PASSWORD = "ilovemydog"; // ← set your password here
+  var PASSWORD = "iloveicedtea"; // ← set your password here
   var KEY = "portfolio_auth";
 
   if (sessionStorage.getItem(KEY) !== PASSWORD) {
