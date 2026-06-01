@@ -278,9 +278,10 @@ function openLightbox(src, alt, caption) {
 
 /* Single delegated listener — works for ALL .cs-image blocks, including new ones */
 document.addEventListener('click', function(e) {
-  var img = e.target.closest('.cs-image img');
-  if (img) {
-    var wrapper = img.closest('.cs-image');
+  if (e.target.closest('.caption')) return;
+  var wrapper = e.target.closest('.cs-image');
+  if (wrapper) {
+    var img = wrapper.querySelector('img');
     var caption = wrapper.querySelector('.caption');
     openLightbox(img.src, img.alt, caption ? caption.textContent.trim() : '');
   }
