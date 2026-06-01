@@ -343,13 +343,18 @@ img { display: block; max-width: 100%; }
   max-width: 1280px;
 }
 
+.cs-image {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px auto;
+  cursor: default;
+  max-width: 1280px;
+}
+
 .cs-image img {
-  display: block;
-  width: 100%;
-  max-width: 1024px;
-  max-height: 1024px;
-  object-fit: contain;
-  transition: transform 0.5s ease;
+  cursor: zoom-in;
 }
 
 .cs-image:hover img {
