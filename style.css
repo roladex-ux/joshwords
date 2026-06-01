@@ -335,7 +335,7 @@ img { display: block; max-width: 100%; }
   display: block;
   margin: 40px auto;
   max-width: 800px;
-  width: 100%;
+  width: fit-content;
 }
 
 .cs-image img {
