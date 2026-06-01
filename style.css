@@ -40,10 +40,6 @@ body {
 
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
-.cs-image img {
-  max-width: 600px !important;
-  max-height: 600px !important;
-}
 
 /* =========================================
    LAYOUT
@@ -337,12 +333,12 @@ img { display: block; max-width: 100%; }
 .cs-image {
   position: relative;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
   margin: 40px auto;
-  cursor: default;
-  max-width: 600px;
   width: fit-content;
+  max-width: 900px;
 }
 
 .cs-image img {
@@ -353,6 +349,9 @@ img { display: block; max-width: 100%; }
   object-fit: contain;
   cursor: zoom-in;
   transition: transform 0.5s ease;
+  order: 2;
+  position: relative;
+  z-index: 0;
 }
 
 .cs-image:hover img {
@@ -360,7 +359,6 @@ img { display: block; max-width: 100%; }
 }
 
 .cs-image .caption {
-  position: relative;
   background: #2e2c2b;
   color: #f9f7f4;
   font-family: var(--font-body);
@@ -368,18 +366,16 @@ img { display: block; max-width: 100%; }
   font-weight: 300;
   line-height: 1.55;
   padding: 14px 18px;
-  max-width: 180px;
+  width: 160px;
   pointer-events: none;
   cursor: default;
   align-self: flex-end;
-  margin-bottom: 0;
+  position: relative;
+  z-index: 1;
 }
 
-.cs-image .caption.left  { order: 1; margin-right: -54px; z-index: 1; }
-.cs-image .caption.right { order: 3; margin-left: -54px; z-index: 1; }
-
-.cs-image .caption.left  { left: 0; }
-.cs-image .caption.right { right: 0; }
+.cs-image .caption.left  { order: 1; margin-right: -48px; }
+.cs-image .caption.right { order: 3; margin-left: -48px; }
 
 /* Position: left (default) */
 /* .cs-image .caption.left  { text-align: left; } */
