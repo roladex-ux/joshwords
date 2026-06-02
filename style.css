@@ -198,7 +198,7 @@ img { display: block; max-width: 100%; }
   padding-top: 16px;
 }
 
-.home-photo-col { position: relative; }
+.home-photo-col { position: relative; width: 100%; }
 
 .home-photo {
   width: 100%;
