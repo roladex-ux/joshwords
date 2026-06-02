@@ -534,9 +534,11 @@ img { display: block; max-width: 100%; }
 
   .home-photo {
     width: 100%;
-    aspect-ratio: 3/2;
-    object-fit: cover;
+    height: auto;
+    aspect-ratio: unset;
+    object-fit: contain;
     object-position: center top;
+    filter: none;
   }
    
   .home-bio-col h2 { font-size: 2rem; }
