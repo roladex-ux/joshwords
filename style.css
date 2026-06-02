@@ -533,7 +533,7 @@ img { display: block; max-width: 100%; }
   }
 
   .home-photo {
-    width: 70%;
+    width: 75%;
     height: auto;
     aspect-ratio: unset;
     object-fit: contain;
