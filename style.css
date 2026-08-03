@@ -14,7 +14,7 @@
 
 :root {
   --black: #111010;
-  --white: #f9f7f4;
+  --white: #ffffff;
   --gray-light: #e8e5e0;
   --gray-mid: #b0aba3;
   --gray-dark: #6b6660;
@@ -355,7 +355,7 @@ img { display: block; max-width: 100%; }
   position: absolute;
   bottom: 20%;
   background: #2e2c2b;
-  color: #f9f7f4;
+  color: #ffffff;
   font-family: var(--font-body);
   font-size: 0.8rem;
   font-weight: 300;
